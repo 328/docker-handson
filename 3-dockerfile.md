@@ -9,6 +9,8 @@
 FROM centos:centos7
 MAINTAINER 328
 RUN yum -y install httpd
+RUN yum -y install mod_ssl
+RUN yum -y install vim
 CMD rm -rf /run/httpd/* /tmp/httpd* && /usr/sbin/httpd -D FOREGROUND
 ```
 
@@ -34,3 +36,4 @@ $ docker images <- imageの確認
 ```
 $ docker run -d -p 8080:80 apachetest
 ```
+
